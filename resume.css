@@ -58,3 +58,31 @@ body {
 .content .label {
     font-weight: bold;
 }
+input{
+    width:500px;
+}
+.pi-container {
+    background-color:#0047ab;
+    color: #fff;
+}
+.a-q-container{
+    background-color: #0047ab;
+    color: #fff;
+}
+.exp-container{
+    background-color: #0047ab;
+    color: #fff;
+}
+.res{
+    background-color: #0047ab;
+    color: #fff;
+    height: 250px;
+    text-align: center;
+    padding-top:100px;
+}
+.resume{
+    margin-top:150px;
+}
+.btn{
+    width:250px;
+}

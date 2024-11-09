@@ -4,46 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Muhammad Arman Saleem</title>
+
     <link rel="stylesheet" href="resume.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+
+    <div class="res">
+        <h1><b>Resume Builder</b></h1>
+    </div>
+
+    <div class="form pt-5">
+        <div class="container d-flex justify-content-center">
+            <label for="fullname">FullName:</label>
+            <input type="text" id="fullname" name="fname">
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="cell">Cell No:</label>
+            <input type="tel" id="cell" name="cell">
+        </div>
+
+        <div class="container justify-content-center d-flex">
+            <label for="exampleFormControlInput1" class="form-label">Email address:</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+
+       
+        <div class="pi">
+            <div class="container pi-container text-center">
+                <h3><b>PERSONAL INFORMATION</b></h3>
+            </div>
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="cnic">CNIC NO:</label>
+            <input type="number" id="cnic" name="cnic">
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+
+        <div class="container d-flex justify-content-center">
+            <label for="gender">Gender:</label>
+            <div class="form-check pr-3">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+
+            <div class="form-check pr-5">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="religion">Religion:</label>
+            <input type="text" id="religion" name="religion">
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="ms">Marital Status:</label>
+            <input type="text" id="ms" name="ms">
+        </div>   
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" name="nationality">
+        </div>
+
+        <div class="container d-flex justify-content-center p-3">
+            <label for="lang">Languages:</label>
+            <input type="text" id="lang" name="lang">
+        </div>
+
+       
+        <div class="a-q">
+            <div class="container a-q-container d-flex justify-content-center">
+                <h3><b>ACADEMIC QUALIFICATION</b></h3>
+            </div>
+        </div>
+
+        <div class="container justify-content-center d-flex">
+            <textarea name="a-q" id="a-q" cols="50" rows="5" placeholder="Academic Qualification"></textarea>
+        </div>
+        <div class="container justify-content-center d-flex">
+            <textarea name="exp" id="exp" cols="50" rows="5" placeholder="Experience"></textarea>
+        </div>
+        
+        <div class="g-btn">
+            <div class="container d-flex justify-content-center">
+                <button onclick="generateCV()" class="btn btn-primary justify-content-center d-flex ">Generate CV</button>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <div class="container resume">
+
         <div class="header">
             <h1><span>C</span>V</h1>
         </div>
-        <div class="name">Muhammad Arman Saleem</div>
-        <div class="contact-info">
-            <p>Address: House no A-95, Nusrat Bhutto Colony, North Nazimabad, Karachi</p>
-            <p>Cell No: 03182360511</p>
+
+        <div class="name" id="cv-name">Muhammad Arman Saleem</div>
+
+        <div class="contact-info" id="cv-contact-info">
+            <p id="cv-address">Address:</p>
+            <p id="cv-cell">Cell No:</p>
+            <p id="cv-email">Email:</p>
         </div>
+
         <div class="section-title">CAREER OBJECTIVE:</div>
+
         <div class="content">
             <p>To work with dedication and honesty in a growing and challenging environment that can best utilize my expertise. I aim to find a challenging career in a reputed organization that can enhance my existing capabilities and allow me to utilize my skills in the best interest of all stakeholders, benefiting the organization.</p>
         </div>
+
         <div class="section-title">PERSONAL INFORMATION:</div>
-        <div class="content">
-            <p><span class="label">Father's Name</span>: Muhammad Saleem</p>
-            <p><span class="label">CNIC</span>: 42101-3506181-1</p>
-            <p><span class="label">Date of Birth</span>: 16-05-2007</p>
-            <p><span class="label">Gender</span>: Male</p>
-            <p><span class="label">Religion</span>: Islam</p>
-            <p><span class="label">Marital Status</span>: Single</p>
-            <p><span class="label">Nationality</span>: Pakistani</p>
-            <p><span class="label">Languages</span>: Urdu</p>
+
+        <div class="content" id="cv-personal-info">
+            <p><span class="label">CNIC</span>: <span id="cv-cnic"></span></p>
+            <p><span class="label">Date of Birth</span>: <span id="cv-dob"></span></p>
+            <p><span class="label">Gender</span>: <span id="cv-gender"></span></p>
+            <p><span class="label">Religion</span>: <span id="cv-religion"></span></p>
+            <p><span class="label">Marital Status</span>: <span id="cv-ms"></span></p>
+            <p><span class="label">Nationality</span>: <span id="cv-nationality"></span></p>
+            <p><span class="label">Languages</span>: <span id="cv-lang"></span></p>
         </div>
         <div class="section-title">ACADEMIC QUALIFICATION:</div>
+
         <div class="content">
-            <p><span class="label">Matriculation</span>: Science from Karachi</p>
+            <p id="cv-qualification"></p>
         </div>
+
         <div class="section-title">EXPERIENCE:</div>
         <div class="content">
-            <p>6 months of experience in Graphic Designing</p>
+            <p id="cv-experience"></p>
         </div>
+
         <div class="section-title">REFERENCE:</div>
         <div class="content">
             <p>Will be furnished upon request.</p>
         </div>
     </div>
-    <script src="res.js"></script>
+
+    </div>
+
+     <div class="d-btn">
+        <div class="container justify-content-center d-flex">
+        <button id="download-btn" class="btn btn-primary">Download as PDF</button>
+        </div>
+    </div>
+
+
+   
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script> 
+    function generateCV() {
+        document.getElementById("cv-name").innerText = document.getElementById("fullname").value;
+    
+        document.getElementById("cv-address").innerText = "Address: " + document.getElementById("address").value;
+    
+        document.getElementById("cv-cell").innerText = "Cell No: " + document.getElementById("cell").value;
+    
+        document.getElementById("cv-email").innerText = "Email: " + document.getElementById("email").value;
+    
+        document.getElementById("cv-cnic").innerText = document.getElementById("cnic").value;
+    
+        document.getElementById("cv-dob").innerText = document.getElementById("dob").value;
+    
+        document.getElementById("cv-gender").innerText = document.querySelector('input[name="gender"]:checked').value;
+    
+        document.getElementById("cv-religion").innerText = document.getElementById("religion").value;
+    
+        document.getElementById("cv-ms").innerText = document.getElementById("ms").value;
+    
+        document.getElementById("cv-nationality").innerText = document.getElementById("nationality").value;
+    
+        document.getElementById("cv-lang").innerText = document.getElementById("lang").value;
+    
+        document.getElementById("cv-qualification").innerText = document.getElementById("a-q").value;
+        
+        document.getElementById("cv-experience").innerText = document.getElementById("exp").value;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('download-btn').addEventListener('click', () => {
+                const fullName = document.getElementById('fullname').value.trim();
+                const fileName = fullName ? `${fullName}_CV.pdf` : "Resume.pdf";
+                const cvContent = document.querySelector('.resume');
+                
+                const options = {
+                    margin: 0.5,
+                    filename: fileName,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+
+                html2pdf().set(options).from(cvContent).save();
+            });
+        });
+
+</script>
 </body>
 </html>
